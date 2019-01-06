@@ -18,7 +18,7 @@ ws.onmessage = (message) => {
   }
 
   if (data.action === 'check') {
-    setLever(counter);
+    setUnknownLever(counter);
     formatSwitcher(counter);
     counter += 1;
   }
@@ -44,7 +44,7 @@ function sendCheckRequest(lever2, id) {
   ws.send(request)
 }
 
-function setLever(lever) {
+function setUnknownLever(lever) {
     state[lever] = data.same ? state[0] : state[0] * -1
 }
 
